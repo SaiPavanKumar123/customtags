@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<label>Username
+<input type="text" id="user"></label><br><br><br>
+<label>Password
+<input type="password" id="pass"></label><br><br><br>
+
+<button onclick="validate()">Submit</button>
+
+
+<script>
+	function validate(){
+		var xhr=new XMLHttpRequest();
+		var user=document.getElementById("user").value;
+		var pass=document.getElementById("pass").value;
+		
+		xhr.open("GET","LoginServ?user="+user+"&pass"+pass);
+		xhr.send();
+		xhr.onreadystatechange=function(){
+			var data=xhr.responseText();
+			$('body').html(data);
+		}
+	}
+
+
+
+</script>
+
+<body>
+
+</body>
+</html>
