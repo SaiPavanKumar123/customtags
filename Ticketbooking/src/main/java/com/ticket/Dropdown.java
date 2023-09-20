@@ -60,7 +60,7 @@ public class Dropdown extends TagSupport {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
-            // Generate the HTML for the dropdown
+          
             while (rs.next()) {
                 String columnValue = rs.getString(col);
                 if (val != null) {
